@@ -1,0 +1,14 @@
+<div class="container pt-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <h1>Adding plant to <%= @garden.name %></h1>
+
+      <%# POST /gardens/:garden_id/plants %>
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+        <%= f.button :submit, class: "btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

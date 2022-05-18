@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  resources :gardens
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :gardens do
+    # gardens/:garden_id/plants/??
+    resources :plants, only: [:new, :create]
+  end
+
+  # plants/:id
+  resources :plants, only: :destroy
 end
